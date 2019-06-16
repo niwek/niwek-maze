@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Board from './modules/Board'
+import Maze from './modules/Maze'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Board />
+        <Maze />
       </header>
     </div>
   );

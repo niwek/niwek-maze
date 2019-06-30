@@ -1,23 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-class Cell extends React.Component{
-    constructor(props){
-        super(props)
+function Cell(props){
+    const[x, setX] = useState(props.x);
+    const[y, setY] = useState(props.y);
+    const[value, setValue] = useState(props.value);
 
-        this.state = {
-            x: props.x,
-            y: props.y,
-            value: props.value,
-        }
-    }
-
-    render(){
-        return (
-            <div className="square">
-                {this.state.value}
-            </div>
-        );
-    }
+    return (
+        <div className="square">
+            {value}
+        </div>
+    );
+    
 }
 
 export default Cell

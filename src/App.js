@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Maze from './modules/Maze'
+import Maze from './modules/Maze';
 
 function App() {
   return (

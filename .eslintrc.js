@@ -19,12 +19,12 @@ module.exports = {
     rules: {
         'operator-linebreak': [2, 'after'],
         indent: [
-            2, 
+            2,
             2,
         ],
         'max-len': [
-            1, 
-            80, 
+            1,
+            80,
             4,
             {
                 ignoreUrls: true,
@@ -32,7 +32,7 @@ module.exports = {
                 ignoreTrailingComments: true,
                 ignorePattern: '^(import.*|const\\s.*\\s=\\srequire.*)',
                 ignoreRegExpLiterals: true,
-            }, 
+            },
         ],
         'jsx-ally/label-has-associated-control': 1,
         'jsx-ally/label-has-for': 1,
@@ -51,7 +51,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 2,
         'react-hooks/exhaustive-deps': 1,
         'import/no-extraneous-dependencies': [
-            2, {devDependencies: ['config/**/*', '**/*.spec.js'] },
+            2, { devDependencies: ['config/**/*', '**/*.spec.js'] },
         ],
     },
     globals: {

@@ -1,3 +1,4 @@
+$imagedir:'/../../public/';
 
 %default-square {
   background: #fff;
@@ -16,24 +17,28 @@
 
 .square {
   @extend %default-square;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .square-remove-bottom {
   @extend %default-square;
-  border-bottom: 0;
+  border-bottom: 1px solid #fff;
 }
 
 .square-remove-top {
   @extend %default-square;
-  border-top: 0;
+  border-top: 1px solid #fff;
 }
 
 .square-remove-left {
   @extend %default-square;
-  border-left: 0;
+  border-left: 1px solid #fff;
 }
 
 .square-remove-right {
   @extend %default-square;
-  border-right: 0;
+  border-right: 1px solid #fff;
 }

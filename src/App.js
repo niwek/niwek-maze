@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.scss';
-import Maze from './modules/Maze';
+import MazeGenerator from './modules/MazeGenerator';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Maze />
+        <MazeGenerator />
       </header>
     </div>
   );

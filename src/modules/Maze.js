@@ -110,6 +110,7 @@ function Maze({ myMaze, length, width }) {
       Y: current.Y,
     };
     carvePassagesFrom(start, modifiableMaze);
+    modifiableMaze[current.Y][current.X].current = true;
     setMaze(modifiableMaze);
   }
 

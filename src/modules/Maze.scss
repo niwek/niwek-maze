@@ -1,0 +1,39 @@
+
+%default-square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square {
+  @extend %default-square;
+}
+
+.square-remove-bottom {
+  @extend %default-square;
+  border-bottom: 0;
+}
+
+.square-remove-top {
+  @extend %default-square;
+  border-top: 0;
+}
+
+.square-remove-left {
+  @extend %default-square;
+  border-left: 0;
+}
+
+.square-remove-right {
+  @extend %default-square;
+  border-right: 0;
+}

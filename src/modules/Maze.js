@@ -18,7 +18,7 @@ function Maze({ myMaze, length, width }) {
       }${cell.removeRight ? 'square-remove-right ' : ''
       }${cell.removeTop ? 'square-remove-top ' : ''}`}
       >
-        {cell.current ? <img alt="beach" src={`${process.env.PUBLIC_URL}/dot.png`} /> : null}
+        {current.X === x && current.Y === y ? <img alt="beach" src={`${process.env.PUBLIC_URL}/dot.png`} /> : null}
       </div>
     );
   }
@@ -110,54 +110,58 @@ function Maze({ myMaze, length, width }) {
       Y: current.Y,
     };
     carvePassagesFrom(start, modifiableMaze);
-    modifiableMaze[current.Y][current.X].current = true;
     setMaze(modifiableMaze);
   }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const keyHandler = ({ key }) => {
-    console.log(key === 'ArrowUp');
-
     if (key === 'ArrowUp' &&
     maze[current.Y][current.X].removeTop) {
-      setCurrent({
+      const newCurrent = {
         X: current.X,
         Y: current.Y - 1,
-      });
+      };
+      setCurrent(newCurrent);
     }
     if (key === 'ArrowDown' &&
     maze[current.Y][current.X].removeBottom) {
-      setCurrent({
+      const newCurrent = {
         X: current.X,
         Y: current.Y + 1,
-      });
+      };
+      setCurrent(newCurrent);
     }
 
     if (key === 'ArrowRight' &&
     maze[current.Y][current.X].removeRight) {
-      setCurrent({
+      const newCurrent = {
         X: current.X + 1,
         Y: current.Y,
-      });
+      };
+      setCurrent(newCurrent);
     }
     if (key === 'ArrowLeft' &&
     maze[current.Y][current.X].removeLeft) {
-      setCurrent({
+      const newCurrent = {
         X: current.X - 1,
         Y: current.Y,
-      });
+      };
+      setCurrent(newCurrent);
     }
   };
 
   useEffect(() => {
     carvePassagesFromStart();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     window.addEventListener('keydown', keyHandler);
     return () => {
       window.removeEventListener('keydown', keyHandler);
     };
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [keyHandler]);
 
   return (
     <div className="shopping-list">

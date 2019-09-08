@@ -15,7 +15,6 @@ function MazeGenerator() {
       const newObject = {
         X: j,
         Y: i,
-        current: false,
         visited: false,
         removeTop: false,
         removeBottom: false,

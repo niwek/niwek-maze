@@ -114,8 +114,48 @@ function Maze({ myMaze, length, width }) {
     setMaze(modifiableMaze);
   }
 
+  const keyHandler = ({ key }) => {
+    console.log(key === 'ArrowUp');
+
+    if (key === 'ArrowUp' &&
+    maze[current.Y][current.X].removeTop) {
+      setCurrent({
+        X: current.X,
+        Y: current.Y - 1,
+      });
+    }
+    if (key === 'ArrowDown' &&
+    maze[current.Y][current.X].removeBottom) {
+      setCurrent({
+        X: current.X,
+        Y: current.Y + 1,
+      });
+    }
+
+    if (key === 'ArrowRight' &&
+    maze[current.Y][current.X].removeRight) {
+      setCurrent({
+        X: current.X + 1,
+        Y: current.Y,
+      });
+    }
+    if (key === 'ArrowLeft' &&
+    maze[current.Y][current.X].removeLeft) {
+      setCurrent({
+        X: current.X - 1,
+        Y: current.Y,
+      });
+    }
+  };
+
   useEffect(() => {
     carvePassagesFromStart();
+
+    window.addEventListener('keydown', keyHandler);
+    return () => {
+      window.removeEventListener('keydown', keyHandler);
+    };
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

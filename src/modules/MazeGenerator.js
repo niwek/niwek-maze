@@ -16,6 +16,7 @@ function MazeGenerator() {
         X: j,
         Y: i,
         visited: false,
+        current: false,
         removeTop: false,
         removeBottom: false,
         removeLeft: false,

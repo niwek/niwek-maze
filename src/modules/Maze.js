@@ -12,11 +12,13 @@ function Maze({ myMaze, length, width }) {
 
   function displayCell(x, y, cell) {
     return (
-      <div className={`square ${
-        cell.removeBottom ? 'square-remove-bottom ' : ''
-      }${cell.removeLeft ? 'square-remove-left ' : ''
-      }${cell.removeRight ? 'square-remove-right ' : ''
-      }${cell.removeTop ? 'square-remove-top ' : ''}`}
+      <div
+        key={`${x}-${y}`}
+        className={`square ${
+          cell.removeBottom ? 'square-remove-bottom ' : ''
+        }${cell.removeLeft ? 'square-remove-left ' : ''
+        }${cell.removeRight ? 'square-remove-right ' : ''
+        }${cell.removeTop ? 'square-remove-top ' : ''}`}
       >
         {current.X === x && current.Y === y ? <img alt="beach" src={`${process.env.PUBLIC_URL}/dot.png`} /> : null}
       </div>
@@ -25,7 +27,7 @@ function Maze({ myMaze, length, width }) {
 
   function displayRow(rowNumber, row) {
     return (
-      <div className="row">
+      <div key={rowNumber} className="row">
         {row.map((key, index) => displayCell(index, rowNumber, row[index]))}
       </div>
     );

@@ -34,6 +34,23 @@
   <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
   <script src="/__/firebase/7.2.3/firebase-analytics.js"></script>
 
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCzVoyCkVhiBK8YPWie73wOpRuP2z6E0Cg",
+      authDomain: "niwek-maze.firebaseapp.com",
+      databaseURL: "https://niwek-maze.firebaseio.com",
+      projectId: "niwek-maze",
+      storageBucket: "niwek-maze.appspot.com",
+      messagingSenderId: "183040770289",
+      appId: "1:183040770289:web:777e2251a1b18227862950",
+      measurementId: "G-BYW2K2GLSB"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
   <!-- Add Firebase products that you want to use -->
   <script src="/__/firebase/7.2.3/firebase-auth.js"></script>
   <script src="/__/firebase/7.2.3/firebase-firestore.js"></script>
